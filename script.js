@@ -40,11 +40,13 @@ const show = {
 
 const fire = (event) =>{
     const target = event.target;
-    show.miss(target);
-    play.updateData = 'shot';
-    
-
+    let written = target.classList.contains('miss') /* <------there solution :)*/
+    if (!written){
+        show.miss(target);
+        play.updateData = 'shot';
+    }
 } 
+
 const init = () =>{
     enemy.addEventListener('click', fire);
 
